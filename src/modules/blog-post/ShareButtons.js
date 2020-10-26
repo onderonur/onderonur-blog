@@ -41,6 +41,7 @@ function ShareButtons({ url }) {
       flexDirection="row"
       flexWrap="wrap"
       justifyContent="center"
+      marginY={1}
     >
       <ShareButtonTooltip name="Facebook">
         <FacebookShareButton {...shareButtonProps}>
