@@ -19,6 +19,13 @@ let theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        // https://twitter.com/stackblitz/status/1321105526709755914
+        html: {
+          scrollBehavior: 'smooth',
+        },
+        ['@media (prefers-reduced-motion)']: {
+          scrollBehavior: 'auto',
+        },
         a: {
           textDecoration: 'none',
         },
