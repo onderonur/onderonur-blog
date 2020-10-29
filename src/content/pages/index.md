@@ -200,6 +200,15 @@ projects:
     techStack:
       - name: HTML
       - name: CSS
+  - title: Day & Night Trip
+    description: CSS Animated SVG
+    featuredImage: /assets/project-datyandnighttrip.jpg
+    demoUrl: https://codepen.io/onderonur/full/eYzVyNy
+    sourceCodeUrl: https://codepen.io/onderonur/pen/eYzVyNy
+    techStack:
+      - name: HTML
+      - name: CSS
+      - name: SVG
 cta:
   ctaText: "  "
   ctaLink: "  "
