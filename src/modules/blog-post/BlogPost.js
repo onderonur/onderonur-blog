@@ -21,7 +21,6 @@ const FeaturedImage = styled(Img)`
 
 const BlogPostContent = styled(HtmlRenderer)`
   padding: ${({ theme }) => theme.spacing(2)}px;
-  text-align: justify;
   img {
     width: 100%;
   }

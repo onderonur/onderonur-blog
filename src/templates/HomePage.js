@@ -160,10 +160,6 @@ const HeroBannerContent = styled.div`
   }
 `;
 
-const AboutSectionContent = styled(HtmlRenderer)`
-  text-align: justify;
-`;
-
 const HomePage = ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
@@ -222,7 +218,7 @@ const HomePage = ({ data }) => {
         }
       >
         <Section ref={aboutRef} title="About">
-          <AboutSectionContent html={html} />
+          <HtmlRenderer html={html} />
         </Section>
         <Section title="Skills">
           <SkillsList skills={frontmatter.skills} />
