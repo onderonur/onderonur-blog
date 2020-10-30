@@ -88,7 +88,7 @@ module.exports = {
         name: `Onur Önder`,
         short_name: `Onur Önder`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
+        background_color: `#fafafa`,
         theme_color: `#fff`,
         display: `standalone`,
         icon: `static/assets/onderonur.png`,
