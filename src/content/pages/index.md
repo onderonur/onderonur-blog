@@ -97,6 +97,7 @@ projects:
     techStack:
       - name: TypeScript
       - name: Next.js
+      - name: React
       - name: Apollo GraphQL
       - name: PostgreSQL
   - title: TMDb Explorer
@@ -107,6 +108,7 @@ projects:
     techStack:
       - name: TypeScript
       - name: Next.js
+      - name: React
   - title: OnUrl
     description: URL Shortener created w/ Next.js, TypeScript, Mongoose
     featuredImage: /assets/project-onurl.jpg
@@ -115,6 +117,7 @@ projects:
     techStack:
       - name: TypeScript
       - name: Next.js
+      - name: React
       - name: MongoDB
   - title: RickQL
     description: Client app for Rick and Morty API w/ TypeScript, Next.js, React &
@@ -125,6 +128,7 @@ projects:
     techStack:
       - name: TypeScript
       - name: Next.js
+      - name: React
       - name: Apollo GraphQL
   - title: Bubbly
     description: Dynamic chat application created w/ Socket.IO, React, TypeScript
@@ -134,6 +138,7 @@ projects:
     sourceCodeUrl: https://github.com/onderonur/bubbly
     techStack:
       - name: TypeScript
+      - name: React
       - name: Express.js
       - name: Socket.IO
   - title: Bubbly-Flask
@@ -143,6 +148,7 @@ projects:
     sourceCodeUrl: https://github.com/onderonur/bubbly-flask
     techStack:
       - name: TypeScript
+      - name: React
       - name: Python
       - name: Flask
       - name: Socket.IO
@@ -163,6 +169,7 @@ projects:
     sourceCodeUrl: https://github.com/onderonur/onderonur-blog
     techStack:
       - name: JavaScript
+      - name: React
       - name: Gatsby
       - name: Netlify CMS
   - title: react-infinite-scroll-hook
