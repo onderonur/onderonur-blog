@@ -231,7 +231,3 @@ collections:
                 name: mail
                 label: Mail
                 required: false
-          - label: 'Google Analytics'
-            name: ga
-            widget: string
-            hint: 'Add you tracking ID, for example UA-XXXXXXXXX-X'

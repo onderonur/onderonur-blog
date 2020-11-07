@@ -23,7 +23,6 @@ Created by moderately modifying [gatsby-started-foundation](https://www.gatsbyjs
 - Customize content pages
 - Add/modify/delete blog posts
 - Edit website settings
-- Google Analytics
 - SEO optimization
 - OpenGraph structured data
 - Twitter Cards meta

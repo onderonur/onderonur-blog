@@ -9,6 +9,5 @@
     "githubUsername": "onderonur",
     "image": "/assets/onderonur.png",
     "description": "Onur Önder's personal website and blog about software development. Built with Gatsby and Netlify CMS."
-  },
-  "ga": "UA-XXXXXXXXX-X"
+  }
 }
