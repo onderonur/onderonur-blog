@@ -199,6 +199,10 @@ projects:
       - name: JavaScript
       - name: nwb
       - name: React
+  - title: go-ty
+    description: Easy and flattened error handling for sync and async functions
+    featuredImage: /assets/project-npm.jpg
+    sourceCodeUrl: https://github.com/onderonur/go-try
   - title: Super Mario - Single Div Pixel Art
     description: HTML and CSS only Super Mario, created with a single div
     featuredImage: /assets/project-supermariopixelart.jpg
