@@ -206,6 +206,7 @@ projects:
     techStack:
       - name: TypeScript
       - name: TSDX
+      - name: Jest
   - title: Super Mario - Single Div Pixel Art
     description: HTML and CSS only Super Mario, created with a single div
     featuredImage: /assets/project-supermariopixelart.jpg
