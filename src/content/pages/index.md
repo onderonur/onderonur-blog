@@ -199,7 +199,7 @@ projects:
       - name: JavaScript
       - name: nwb
       - name: React
-  - title: go-ty
+  - title: go-try
     description: Easy and flattened error handling for sync and async functions
     featuredImage: /assets/project-npm.jpg
     sourceCodeUrl: https://github.com/onderonur/go-try
