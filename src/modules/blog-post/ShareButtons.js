@@ -4,6 +4,8 @@ import {
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
   RedditShareButton,
   RedditIcon,
 } from 'react-share';
@@ -52,6 +54,11 @@ function ShareButtons({ url }) {
         <TwitterShareButton {...shareButtonProps}>
           <TwitterIcon {...shareIconProps} />
         </TwitterShareButton>
+      </ShareButtonTooltip>
+      <ShareButtonTooltip name="LinkedIn">
+        <LinkedinShareButton {...shareButtonProps}>
+          <LinkedinIcon {...shareIconProps} />
+        </LinkedinShareButton>
       </ShareButtonTooltip>
       <ShareButtonTooltip name="Reddit">
         <RedditShareButton {...shareButtonProps}>
