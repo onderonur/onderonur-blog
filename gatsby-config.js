@@ -25,8 +25,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content/`,
-        name: `content`,
+        path: `${__dirname}/src/content/pages/`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // If we don't do this, "createFilePath" will have
+        // a relative file path in it.
+        // We just want to get the file name to
+        // create a proper slug in gatsby-node.
+        // So, we omit this path.
+        path: `${__dirname}/src/content/posts/`,
+        name: 'blogPosts',
       },
     },
     `gatsby-transformer-sharp`,

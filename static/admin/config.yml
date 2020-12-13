@@ -21,7 +21,7 @@ collections:
     description: >
       Create awesome content here.
     folder: src/content/posts
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     summary: '{{title}} — {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have

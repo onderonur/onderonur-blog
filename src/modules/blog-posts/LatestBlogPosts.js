@@ -22,7 +22,6 @@ function LatestBlogPosts() {
                 excerpt(pruneLength: 250)
                 frontmatter {
                   date(formatString: "MMMM DD, YYYY")
-                  slug
                   title
                   featuredImage {
                     childImageSharp {
@@ -34,6 +33,7 @@ function LatestBlogPosts() {
                   }
                 }
                 fields {
+                  route
                   readingTime {
                     text
                   }
@@ -47,6 +47,7 @@ function LatestBlogPosts() {
         const postEdges = data.allMarkdownRemark.edges.filter(
           (edge) => !!edge.node.frontmatter.date,
         );
+
         return (
           <section>
             <BlogPostCardList postEdges={postEdges} />

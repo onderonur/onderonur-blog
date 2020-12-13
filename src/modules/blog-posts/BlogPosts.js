@@ -9,6 +9,8 @@ import BlogPostCard from '../blog-posts/BlogPostCard';
 import PaginationLink from './PaginationLink';
 import GatsbyLink from '../shared/GatsbyLink';
 
+const blogPrefix = '/blog/';
+
 const PaginationRoot = styled.ul`
   padding: 0;
   margin: 0;
@@ -25,7 +27,6 @@ const PaginationItem = styled.li`
 `;
 
 const Pagination = ({
-  blogSlug,
   currentPage,
   prevPage,
   isFirst,
@@ -47,7 +48,7 @@ const Pagination = ({
           <PaginationItem key={`pagination-number${pageNumber}`}>
             <MuiLink
               component={GatsbyLink}
-              to={`${blogSlug}${i === 0 ? '' : pageNumber}`}
+              to={`${blogPrefix}${i === 0 ? '' : pageNumber}`}
             >
               {currentPage === pageNumber ? (
                 <Bold>{linkContent}</Bold>
@@ -69,22 +70,14 @@ const Pagination = ({
 
 function BlogPosts({ data, pageContext }) {
   const { currentPage, pagesCount } = pageContext;
-  const blogSlug = '/blog/';
   const isFirst = currentPage === 1;
   const isLast = currentPage === pagesCount;
   const prevPage =
-    currentPage - 1 === 1 ? blogSlug : blogSlug + (currentPage - 1).toString();
-  const nextPage = blogSlug + (currentPage + 1).toString();
+    currentPage - 1 === 1
+      ? blogPrefix
+      : blogPrefix + (currentPage - 1).toString();
+  const nextPage = `${blogPrefix}${currentPage + 1}`;
 
-  const paginationProps = {
-    isFirst,
-    prevPage,
-    pagesCount,
-    blogSlug,
-    currentPage,
-    isLast,
-    nextPage,
-  };
   const postEdges = data.allMarkdownRemark.edges.filter(
     (edge) => !!edge.node.frontmatter.date,
   );
@@ -100,7 +93,17 @@ function BlogPosts({ data, pageContext }) {
           getItemKey={(edge) => edge.node.id}
           renderItem={(edge) => <BlogPostCard data={edge.node} />}
         />
-        <Pagination {...paginationProps} />
+        <Pagination
+          {...{
+            isFirst,
+            prevPage,
+            pagesCount,
+            blogPrefix,
+            currentPage,
+            isLast,
+            nextPage,
+          }}
+        />
       </Section>
     </>
   );

@@ -50,7 +50,7 @@ const Section = React.forwardRef(function Section({ title, children }, ref) {
     });
   }, [isVisible]);
 
-  const slug = slugify(title, { lower: true });
+  const sectionSlug = slugify(title, { lower: true });
 
   return (
     <StyledFade
@@ -64,8 +64,8 @@ const Section = React.forwardRef(function Section({ title, children }, ref) {
       timeout={1000}
     >
       <Box marginTop={3} marginBottom={4}>
-        <StyledAnchor href={`#${slug}`}>
-          <SectionTitle id={slug}>{title}</SectionTitle>
+        <StyledAnchor href={`#${sectionSlug}`}>
+          <SectionTitle id={sectionSlug}>{title}</SectionTitle>
         </StyledAnchor>
         {children}
       </Box>

@@ -3,6 +3,19 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const templatesPath = './src/templates';
 
+function isNodeBlogPost(node) {
+  return node.frontmatter.template === 'BlogPostPage';
+}
+
+function getNodeSlug({ node, getNode }) {
+  const slug = createFilePath({ node, getNode });
+  if (isNodeBlogPost(node)) {
+    // We add the '/blog' prefix here for blog posts.
+    return `/blog${slug}`;
+  }
+  return slug;
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
@@ -13,11 +26,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            id
             frontmatter {
               slug
               template
               title
+            }
+            fields {
+              route
             }
           }
         }
@@ -32,29 +47,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Create markdown pages
-  const posts = result.data.allMarkdownRemark.edges;
+  const postEdges = result.data.allMarkdownRemark.edges;
   let blogPostsCount = 0;
 
-  posts.forEach((post, index) => {
-    const id = post.node.id;
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  postEdges.forEach((post, index) => {
+    const previous =
+      index === postEdges.length - 1 ? null : postEdges[index + 1].node;
+    const next = index === 0 ? null : postEdges[index - 1].node;
+
+    const { route } = post.node.fields;
 
     createPage({
-      path: post.node.frontmatter.slug,
+      path: route,
       component: path.resolve(
         `${templatesPath}/${String(post.node.frontmatter.template)}.js`,
       ),
       // additional data can be passed via context
       context: {
-        id,
+        route,
         previous,
         next,
       },
     });
 
     // Count blog posts.
-    if (post.node.frontmatter.template === 'BlogPostPage') {
+    const isBlogPost = isNodeBlogPost(post.node);
+    if (isBlogPost) {
       blogPostsCount++;
     }
   });
@@ -80,11 +98,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
-      name: `slug`,
-      value: slug,
+      name: `route`,
+      // We use node.fields.route for page paths too.
+      // route is set as page path above `createPage` function calls.
+      value: getNodeSlug({ node, getNode }),
     });
   }
 };

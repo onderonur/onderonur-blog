@@ -28,11 +28,9 @@ const BlogPostContent = styled(HtmlRenderer)`
     text-decoration: underline;
     color: ${({ theme }) => theme.palette.primary.main};
   }
-  > p {
-    code {
-      padding: ${({ theme }) => theme.spacing(0.2, 0.4)};
-      background-color: ${({ theme }) => theme.palette.grey[300]};
-    }
+  *:not(pre) code {
+    padding: ${({ theme }) => theme.spacing(0.2, 0.4)};
+    background-color: ${({ theme }) => theme.palette.grey[300]};
   }
 `;
 
@@ -102,7 +100,7 @@ function BlogPost({ data, pageContext }) {
 
         <BlogPostShareButtons />
       </StyledArticle>
-      {(previous ?? next) && <BlogPostPagination {...props} />}
+      {(previous || next) && <BlogPostPagination {...props} />}
     </>
   );
 }

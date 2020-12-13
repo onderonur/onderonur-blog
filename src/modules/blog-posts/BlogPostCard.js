@@ -11,7 +11,7 @@ import GatsbyLink from '../shared/GatsbyLink';
 
 function BlogPostCard({ data }) {
   return (
-    <GatsbyLink to={data.frontmatter.slug}>
+    <GatsbyLink to={data.fields.route}>
       <Card>
         <CardActionArea>
           <BaseCardMedia

@@ -17,7 +17,6 @@ export const blogListQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            slug
             title
             featuredImage {
               childImageSharp {
@@ -29,6 +28,7 @@ export const blogListQuery = graphql`
             }
           }
           fields {
+            route
             readingTime {
               text
             }

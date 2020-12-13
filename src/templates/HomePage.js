@@ -21,7 +21,7 @@ import ExperienceTimeline from '../modules/experience/ExperienceTimeline';
 import SocialAccounts from '../modules/social-accounts/SocialAccounts';
 
 export const pageQuery = graphql`
-  query HomeQuery($id: String!) {
+  query HomeQuery($route: String!) {
     heroImage: file(relativePath: { eq: "hero-image.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1920) {
@@ -29,9 +29,12 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(fields: { route: { eq: $route } }) {
       id
       html
+      fields {
+        route
+      }
       frontmatter {
         title
         tagline

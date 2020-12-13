@@ -14,19 +14,24 @@ function BlogPostPage(props) {
 export default BlogPostPage;
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
+  query BlogPostQuery($route: String!) {
     site {
       siteMetadata {
         siteUrl
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(fields: { route: { eq: $route } }) {
       id
       html
       excerpt(pruneLength: 148)
+      fields {
+        route
+        readingTime {
+          text
+        }
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        slug
         title
         description
         featuredImage {
@@ -44,11 +49,6 @@ export const pageQuery = graphql`
               src
             }
           }
-        }
-      }
-      fields {
-        readingTime {
-          text
         }
       }
     }

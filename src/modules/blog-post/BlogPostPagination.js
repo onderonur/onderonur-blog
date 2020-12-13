@@ -8,24 +8,24 @@ function BlogPostPagination({ previous, next }) {
       <Divider />
       <Box marginY={2}>
         <Grid container spacing={2}>
-          {previous && previous.frontmatter.template === 'BlogPostPage' && (
-            <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
+            {previous && previous.frontmatter.template === 'BlogPostPage' && (
               <PaginationLink
                 direction="previous"
-                to={previous.frontmatter.slug}
+                to={previous.fields.route}
                 subtitle={previous.frontmatter.title}
               />
-            </Grid>
-          )}
-          {next && next.frontmatter.template === 'BlogPostPage' && (
-            <Grid item xs={12} sm={6}>
+            )}
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            {next && next.frontmatter.template === 'BlogPostPage' && (
               <PaginationLink
                 direction="next"
-                to={next.frontmatter.slug}
+                to={next.fields.route}
                 subtitle={next.frontmatter.title}
               />
-            </Grid>
-          )}
+            )}
+          </Grid>
         </Grid>
       </Box>
     </div>
