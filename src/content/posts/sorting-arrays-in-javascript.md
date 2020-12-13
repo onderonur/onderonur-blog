@@ -6,7 +6,6 @@ date: 2020-12-13 05:20
 description: Tips for sorting arrays of numbers, strings and objects in JavaScript
 featuredImage: /assets/tolga-ulkan-9k36QqhA0cU-unsplash.jpg
 ---
-
 JavaScript can be tricky sometimes. We know the times when we try something so easy like sorting an array, but it ends up so wrong and breaks our code.
 
 When we know why this happens and how to fix it, it's all easy actually.
@@ -33,7 +32,9 @@ console.log(arr);
 // logs: [ 1, 15, 17, 2, 3 ]
 ```
 
-And welcome to lands of JavaScript! You can try this code snippet and see if the result is right or wrong. But it's absolutely right and there is a reason behind it. The default method converts each of the elements to `string` and then compares them. So, even if we try this on an array full of numeric values, it ends up like this.
+And welcome to lands of JavaScript! You can try this code snippet and see if the result is right or wrong. But it's absolutely right and there is a reason behind it.  
+
+The default method converts each of the elements to `string` and then compares them. So, even if we try this on an array full of numeric values, it ends up like this.
 
 ## The Compare function
 
@@ -47,9 +48,9 @@ function compare(firstItem, secondItem) {
 
 Our `compare` function should return a numeric value after comparing two items.
 
-- If it returns 0, order of compared values does not change.
-- If it returns a positive `number`, `secondItem` gets placed after `firstItem`.
-- If it returns a negative `number`, `firstItem` gets placed after `secondItem`.
+* If it returns 0, order of compared values does not change.
+* If it returns a positive `number`, `secondItem` gets placed after `firstItem`.
+* If it returns a negative `number`, `firstItem` gets placed after `secondItem`.
 
 So, if we want our numeric values to be sorted in an ascending order, we can do it like this:
 
@@ -163,7 +164,7 @@ console.log(users);
 // logs: [ 'User 1', 'User 5', 'User 12', 'User 18', 'User 30' ]
 ```
 
-_As a side note, if we have a big array to sort, it's better to use `Intl.Collator` in terms of performance._
+*As a side note, if we have a big array to sort, it's better to use `Intl.Collator` in terms of performance.*
 
 ## Custom objects
 
