@@ -49,8 +49,8 @@ function compare(firstItem, secondItem) {
 Our `compare` function should return a numeric value after comparing two items.
 
 * If it returns 0, order of compared values does not change.
-* If it returns a positive `number`, `secondItem` gets placed after `firstItem`.
-* If it returns a negative `number`, `firstItem` gets placed after `secondItem`.
+* If it returns a positive `number`, `firstItem` gets placed after `secondItem`.
+* If it returns a negative `number`, `secondItem` gets placed after `firstItem`.
 
 So, if we want our numeric values to be sorted in an ascending order, we can do it like this:
 
