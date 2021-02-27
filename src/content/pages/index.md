@@ -52,8 +52,15 @@ skills:
   - name: Agile Development
     icon: /assets/skill-icon-agiledevelopment.jpg
 experience:
-  - dateRange: July 2018 - Present
-    jobTitle: Software Developer
+  - jobTitle: Software Developer
+    company: Arkas Holding - Bimar Bilgi İşlem Hizmetleri A.Ş.
+    dateRange: April 2020 - Present
+    location: İzmir, Turkey
+    description: Working on both web and mobile applications by mainly using
+      TypeScript, JavaScript, React, React-Native, .Net Core, Git and Azure
+      DevOps
+  - dateRange: July 2018 - April 2020
+    jobTitle: Junior Software Developer
     company: Arkas Holding - Bimar Bilgi İşlem Hizmetleri A.Ş.
     description: Enterprise applications (both web and mobile) with TypeScript,
       JavaScript, React, React Native, Node.js, .Net Core, Microsoft SQL Server,
