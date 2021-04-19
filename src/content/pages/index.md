@@ -181,7 +181,7 @@ projects:
       - name: Netlify CMS
   - title: drag-and-drop-taskboard
     description: Taskboard with drag'n drop feature. Built w/ React, TypeScript
-    featuredImage: /assets/example.jpg
+    featuredImage: /assets/project-draganddroptaskboard.jpg
     sourceCodeUrl: https://github.com/onderonur/drag-and-drop-taskboard
     demoUrl: https://onderonur.github.io/drag-and-drop-taskboard/
     techStack:
