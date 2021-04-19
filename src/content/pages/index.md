@@ -138,8 +138,8 @@ projects:
       - name: React
       - name: Apollo GraphQL
   - title: Bubbly
-    description: Dynamic chat application created w/ Socket.IO, React, TypeScript
-      and Express
+    description: Dynamic chat application created w/ Socket.IO, React, TypeScript,
+      Next.js and Express
     featuredImage: /assets/project-bubbly.jpg
     demoUrl: https://bubbly-chat.herokuapp.com/
     sourceCodeUrl: https://github.com/onderonur/bubbly
@@ -179,6 +179,14 @@ projects:
       - name: React
       - name: Gatsby
       - name: Netlify CMS
+  - title: drag-and-drop-taskboard
+    description: Taskboard with drag'n drop feature. Built w/ React, TypeScript
+    featuredImage: /assets/example.jpg
+    sourceCodeUrl: https://github.com/onderonur/drag-and-drop-taskboard
+    demoUrl: https://onderonur.github.io/drag-and-drop-taskboard/
+    techStack:
+      - name: TypeScript
+      - name: React
   - title: react-infinite-scroll-hook
     description: A simple hook to create infinite scroll list components
     featuredImage: /assets/project-npm.jpg
